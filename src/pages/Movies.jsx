@@ -1,4 +1,4 @@
-import { getTrendingMovies } from '../services/moviesAPI';
+// import { getTrendingMovies } from '../services/moviesAPI';
 
 const Movies = () => {
   // const movies = getTrendingMovies();

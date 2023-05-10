@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const MovieDetails = () => {
   return (
@@ -12,6 +12,7 @@ const MovieDetails = () => {
           <Link to="reviews">you can see reviews</Link>
         </li>
       </ul>
+      <Outlet />
     </div>
   );
 };

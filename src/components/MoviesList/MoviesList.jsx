@@ -1,11 +1,18 @@
-const MoviesList = ({ items }) => {
+import { Link } from 'react-router-dom';
+
+export const MoviesList = ({ movies }) => {
+  console.log(movies);
   return (
-    <ul>
-      {items.map(item => (
-        <li key={item.id}>{item.name}</li>
-      ))}
-    </ul>
+    <div>
+      <ul>
+        {movies.map(item => (
+          <li key={item.id}>
+            <Link to={`${item.id}`}>
+              <p>{item.title}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
-
-export default MoviesList;

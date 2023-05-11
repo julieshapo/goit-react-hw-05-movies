@@ -1,15 +1,17 @@
 export const SearchBar = ({ onSubmit }) => {
   return (
     <div>
-      <form action="" onSubmit={() => onSubmit()}>
+      <form action="" onSubmit={onSubmit}>
         <input
           type="text"
-          value="name"
+          name="search"
           placeholder="Enter movie name"
-          autofocus
+          autoFocus
           autoComplete="off"
         />
-        <button type="submit">Search</button>
+        <button type="submit" aria-label="Search movies">
+          Search
+        </button>
       </form>
     </div>
   );

@@ -22,7 +22,7 @@ export async function getTrendingMovies(page = 1) {
 }
 // getTrendingMovies();
 
-export async function getSearchMovies(name, page) {
+export async function getMoviesBySearch(name) {
   try {
     const params = {
       api_key: API_KEY,
@@ -30,17 +30,17 @@ export async function getSearchMovies(name, page) {
       query: name,
       page: 1,
     };
-    const response = await axios.get(`${BASE_URL}/search/movie?page=${page}`, {
+    const response = await axios.get(`${BASE_URL}/search/movie?page=1`, {
       params,
     });
-    console.log(response.data);
-    return response.data;
+    // console.log(response.data.results);
+    return response.data.results;
   } catch (error) {
     console.log(error);
   }
 }
 
-// getSearchMovies('avatar', 1);
+// getMoviesBySearch('cat');
 
 export async function getMovieDetails(movie_id) {
   try {
@@ -51,6 +51,7 @@ export async function getMovieDetails(movie_id) {
     const response = await axios.get(`${BASE_URL}/movie/${movie_id}?`, {
       params,
     });
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);

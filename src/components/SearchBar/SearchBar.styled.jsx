@@ -8,13 +8,13 @@ export const SearchBarStyle = styled.div`
 export const Form = styled.form`
   display: flex;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   max-width: 600px;
   overflow: hidden;
 `;
 
 export const Input = styled.input`
-  width: 600px;
+  width: 200px;
   height: 40px;
   font-family: inherit;
   font-size: 20px;

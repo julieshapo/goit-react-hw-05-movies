@@ -40,6 +40,15 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #212121;
+
+  :hover, :focus {
+    color: tomato
+  }
+}
+
 /* ul,
 ol {
   margin: 0;

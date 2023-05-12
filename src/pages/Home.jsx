@@ -4,18 +4,18 @@ import { getTrendingMovies } from '../services/moviesAPI';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getMovies = async () => {
       try {
-        setIsLoading(true);
+        // setIsLoading(true);
         const movies = await getTrendingMovies();
         setMovies([...movies]);
       } catch (error) {
         console.log(error);
       } finally {
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     };
 

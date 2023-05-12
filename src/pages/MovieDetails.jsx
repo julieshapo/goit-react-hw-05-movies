@@ -5,7 +5,7 @@ import { getMovieDetails } from 'services/moviesAPI';
 
 const MovieDetails = () => {
   const [selectedMovie, setSelectedMovie] = useState();
-  const [isLoading, setIsLoading] = useState({});
+  // const [isLoading, setIsLoading] = useState({});
 
   const { movieId } = useParams();
 
@@ -26,7 +26,7 @@ const MovieDetails = () => {
   return (
     <div>
       <p>movieId: {movieId}</p>
-      {/* {movieId && <MovieItem item={selectedMovie} />} */}
+      {movieId && <MovieItem item={selectedMovie} />}
       <ul>
         <li>
           <Link to="cast">you can see casting</Link>

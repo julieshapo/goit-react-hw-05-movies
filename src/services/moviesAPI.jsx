@@ -42,13 +42,13 @@ export async function getMoviesBySearch(name) {
 
 // getMoviesBySearch('cat');
 
-export async function getMovieDetails(movie_id) {
+export async function getMovieDetails(id) {
   try {
     const params = {
       api_key: API_KEY,
       language: 'en-US',
     };
-    const response = await axios.get(`${BASE_URL}/movie/${movie_id}?`, {
+    const response = await axios.get(`${BASE_URL}/movie/${id}?`, {
       params,
     });
     console.log(response.data);

@@ -6,7 +6,7 @@ import { SearchBar } from 'components/SearchBar/SearchBar';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const search = searchParams.get('search');
@@ -29,13 +29,13 @@ const Movies = () => {
 
     const getMovies = async name => {
       try {
-        setIsLoading(true);
+        // setIsLoading(true);
         const movies = await getMoviesBySearch(name);
         setMovies([...movies]);
       } catch (error) {
         console.log(error);
       } finally {
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     };
 

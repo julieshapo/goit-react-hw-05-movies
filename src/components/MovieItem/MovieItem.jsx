@@ -7,14 +7,16 @@ export const MovieItem = ({
     overview,
     vote_average,
   },
-}) => { 
+}) => {
   const releaseDate = new Date(release_date).getFullYear();
 
   const image = poster_path
     ? `https://image.tmdb.org/t/p/w400/${poster_path}`
     : '';
 
-  const score = `${(vote_average * 10).toFixed(0)}%`;
+  const score = vote_average
+    ? `${(vote_average * 10).toFixed(0)}%`
+    : 'No Score';
 
   return (
     <div>

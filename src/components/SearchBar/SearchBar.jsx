@@ -1,18 +1,20 @@
+import { Button, Input, SearchBarStyle } from './SearchBar.styled';
+
 export const SearchBar = ({ onSubmit }) => {
   return (
-    <div>
+    <SearchBarStyle>
       <form action="" onSubmit={onSubmit}>
-        <input
+        <Input
           type="text"
           name="search"
           placeholder="Enter movie name"
           autoFocus
           autoComplete="off"
         />
-        <button type="submit" aria-label="Search movies">
+        <Button type="submit" aria-label="Search movies">
           Search
-        </button>
+        </Button>
       </form>
-    </div>
+    </SearchBarStyle>
   );
 };

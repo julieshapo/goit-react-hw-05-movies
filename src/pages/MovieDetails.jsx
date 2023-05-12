@@ -3,6 +3,8 @@ import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieDetails } from 'services/moviesAPI';
 import { ThreeCircles } from 'react-loader-spinner';
+import { Loader } from 'components/SharedLayout/SharedLayout.styled';
+import { BackLink, Container } from 'pages/MovieDetails.styled';
 
 const MovieDetails = () => {
   const [selectedMovie, setSelectedMovie] = useState();
@@ -32,8 +34,8 @@ const MovieDetails = () => {
   }, [movieId]);
 
   return (
-    <div>
-      <Link to={backLinkLocationRef.current}>Back to Movies</Link>
+    <Container>
+      <BackLink to={backLinkLocationRef.current}>Back to Movies</BackLink>
       {isLoading ? <p>LOADING...</p> : <MovieItem item={selectedMovie} />}
 
       <ul>
@@ -46,7 +48,7 @@ const MovieDetails = () => {
       </ul>
       <Suspense
         fallback={
-          <div>
+          <Loader>
             <ThreeCircles
               height="80"
               width="80"
@@ -59,12 +61,12 @@ const MovieDetails = () => {
               innerCircleColor=""
               middleCircleColor=""
             />
-          </div>
+          </Loader>
         }
       >
         <Outlet />
       </Suspense>
-    </div>
+    </Container>
   );
 };
 

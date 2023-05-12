@@ -1,24 +1,21 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { ThreeCircles } from 'react-loader-spinner';
+import Header from 'components/Header/Header';
+import { Loader } from './SharedLayout.styled';
 
 const SharedLayout = () => {
   return (
     <div>
-      <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
-        </nav>
-      </header>
+      <Header />
       <main>
         <Suspense
           fallback={
-            <div>
+            <Loader>
               <ThreeCircles
                 height="80"
                 width="80"
-                color="#4fa94d"
+                color="tomato"
                 wrapperStyle={{}}
                 wrapperClass=""
                 visible={true}
@@ -27,7 +24,7 @@ const SharedLayout = () => {
                 innerCircleColor=""
                 middleCircleColor=""
               />
-            </div>
+            </Loader>
           }
         >
           <Outlet />

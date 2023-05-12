@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { MovieItem } from './MoviesList.styled';
 
 export const MoviesList = ({ movies, state }) => {
   // console.log(movies);
@@ -6,11 +7,11 @@ export const MoviesList = ({ movies, state }) => {
     <div>
       <ul>
         {movies.map(movie => (
-          <li key={movie.id}>
+          <MovieItem key={movie.id}>
             <Link to={`/movies/${movie.id}`} state={state}>
               <p>{movie.title}</p>
             </Link>
-          </li>
+          </MovieItem>
         ))}
       </ul>
     </div>

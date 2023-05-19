@@ -2,9 +2,9 @@ import { MovieItem } from 'components/MovieItem/MovieItem';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieDetails } from 'services/moviesAPI';
-import { ThreeCircles } from 'react-loader-spinner';
-import { Loader } from 'components/SharedLayout/SharedLayout.styled';
+
 import { BackLink, Container } from 'pages/MovieDetails.styled';
+import Loader from 'components/Loader/Loader';
 
 const MovieDetails = () => {
   const [selectedMovie, setSelectedMovie] = useState();
@@ -46,24 +46,7 @@ const MovieDetails = () => {
           <Link to="reviews">Watch reviews</Link>
         </li>
       </ul>
-      <Suspense
-        fallback={
-          <Loader>
-            <ThreeCircles
-              height="80"
-              width="80"
-              color="#4fa94d"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-              ariaLabel="three-circles-rotating"
-              outerCircleColor=""
-              innerCircleColor=""
-              middleCircleColor=""
-            />
-          </Loader>
-        }
-      >
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </Container>

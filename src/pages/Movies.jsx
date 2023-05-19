@@ -3,6 +3,7 @@ import { getMoviesBySearch } from '../services/moviesAPI';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { SearchBar } from 'components/SearchBar/SearchBar';
+import Loader from 'components/Loader/Loader';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -49,7 +50,9 @@ const Movies = () => {
     <main>
       <SearchBar onSubmit={handleSubmit} />
       {isLoading ? (
-        <p>'LOADING...'</p>
+        <p>
+          <Loader />
+        </p>
       ) : (
         <MoviesList movies={movies} state={{ from: location }} />
       )}

@@ -8,8 +8,7 @@ export const SearchBarStyle = styled.div`
 export const Form = styled.form`
   display: flex;
   align-items: center;
-  /* width: 100%; */
-  max-width: 600px;
+  width: 100%;
   overflow: hidden;
 `;
 
@@ -18,14 +17,20 @@ export const Input = styled.input`
   height: 40px;
   font-family: inherit;
   font-size: 20px;
-  margin-right: 10px;
   outline: none;
   padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
   border-radius: 3px;
 
   ::placeholder {
     font-family: inherit;
     font-size: 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 500px;
+    margin-bottom: 0;
   }
 `;
 
@@ -40,7 +45,6 @@ export const Button = styled.button`
   height: 40px;
   border: 0;
   border-radius: 3px;
-  /* opacity: 0.6; */
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 

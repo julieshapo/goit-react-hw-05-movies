@@ -50,9 +50,9 @@ const Movies = () => {
     <main>
       <SearchBar onSubmit={handleSubmit} />
       {isLoading ? (
-        <p>
+        <div>
           <Loader />
-        </p>
+        </div>
       ) : (
         <MoviesList movies={movies} state={{ from: location }} />
       )}

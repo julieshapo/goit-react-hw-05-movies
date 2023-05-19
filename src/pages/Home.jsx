@@ -29,9 +29,9 @@ const Home = () => {
   return (
     <main>
       {isLoading ? (
-        <p>
+        <div>
           <Loader />
-        </p>
+        </div>
       ) : (
         <MoviesList movies={movies} state={{ from: location }} />
       )}
